@@ -1,7 +1,6 @@
 buildscript {
     ext.kotlin_version = '1.2.30'
     repositories {
-        ***REMOVED***
         jcenter()
         maven {
             url 'https://maven.google.com/'
@@ -32,7 +31,6 @@ jar {
 
 dependencies {
     repositories {
-        ***REMOVED***
         jcenter()
         mavenCentral()
         maven { url 'https://maven.google.com' }
