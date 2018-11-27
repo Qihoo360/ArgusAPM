@@ -1,0 +1,26 @@
+ext {
+    // debug版带日志
+    APMSDK_DEBUG = false
+    APMSDK_VERSION = "2.0.1"
+    APMSDK_BUILD = "1006"
+
+    getDirSuffix = this.&getDirSuffix
+    APM_TASKS_GROUP = "argus"
+}
+
+String getTime() {
+    Calendar calendar = Calendar.getInstance();
+    StringBuilder sbuilder = new StringBuilder();
+    sbuilder.append(calendar.get(Calendar.YEAR) + "-");
+    sbuilder.append(calendar.get(Calendar.MONTH) + 1 + "-");
+    sbuilder.append(calendar.get(Calendar.DAY_OF_MONTH) + "-");
+    sbuilder.append(calendar.get(Calendar.HOUR_OF_DAY) + "-");
+    sbuilder.append(calendar.get(Calendar.MINUTE) + "-");
+    sbuilder.append(calendar.get(Calendar.MILLISECOND));
+    return sbuilder.toString();
+}
+
+String getDirSuffix() {
+    String suffix = APMSDK_VERSION + "." + APMSDK_BUILD + "-[" + getTime() + "]";
+    return suffix.replaceAll("\"", "");
+}

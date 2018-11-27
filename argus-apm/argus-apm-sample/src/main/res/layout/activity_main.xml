@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:lineSpacingExtra="3dp"
+            android:text="如果想要快速的去采集一些数据，可以点击下面的一些性能采集按钮，然后查看apm.db即可！(注意：App启动、内存、文件、帧率等模块的采集不需要交互即可根据云规则配置进行采集)" />
+
+
+        <Button
+            android:id="@+id/startwork_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="#cad1ca"
+            android:onClick="onClick"
+            android:text="startWork"
+            android:textColor="#00baf9" />
+
+
+        <Button
+            android:id="@+id/test_cloud_rule_file_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="#cad1ca"
+            android:onClick="onClick"
+            android:text="云规则文件是否下载成功"
+            android:textColor="#00baf9" />
+
+        <Button
+            android:id="@+id/test_cloud_rule_file_is_from_sd_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="#cad1ca"
+            android:onClick="onClick"
+            android:text="SD卡是否包含云规则文件"
+            android:textColor="#00baf9" />
+
+
+        <Button
+            android:id="@+id/test_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="#cad1ca"
+            android:onClick="onClick"
+            android:text="采集Activity信息"
+            android:textColor="#00baf9" />
+
+        <Button
+            android:id="@+id/test_urlconnection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="#cad1ca"
+            android:onClick="onClick"
+            android:text="采集UrlConnection信息"
+            android:textColor="#00baf9" />
+
+        <Button
+            android:id="@+id/test_okhttp3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="#cad1ca"
+            android:onClick="onClick"
+            android:text="采集OkHttp3信息"
+            android:textColor="#00baf9" />
+
+        <Button
+            android:id="@+id/test_block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="#cad1ca"
+            android:onClick="onClick"
+            android:text="采集Block信息"
+            android:textColor="#00baf9" />
+
+    </LinearLayout>
+</ScrollView>

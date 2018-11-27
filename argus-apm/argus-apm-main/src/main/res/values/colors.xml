@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 透明 -->
+    <color name="transparent">#00000000</color>
+
+    <!-- 默认的文字颜色 -->
+    <color name="common_font_color_1">#000000</color>
+    <color name="common_font_color_2">#4d4d4d</color>
+    <color name="common_font_color_3">#999999</color>
+    <color name="common_font_color_4">#b2b2b2</color>
+    <color name="common_font_color_5">#29a600</color>
+    <color name="common_font_color_6">#f14c0c</color>
+    <color name="common_font_color_7">#FFFFFF</color>
+    <color name="common_font_color_8">#0096FF</color>
+    <color name="common_font_color_14">#f79d1c</color>
+
+
+    <color name="font_nomal">@color/common_font_color_8</color>
+    <color name="big_window_bg">#33000000</color>
+</resources>

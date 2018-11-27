@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">mobile</string>
+    <string name="provider_authorities">com.apm.mobile</string>
+
+    <string name="mem">内存</string>
+    <string name="men_total">total:</string>
+    <string name="men_dalvik">dalvik:</string>
+    <string name="men_native">native:</string>
+    <string name="men_other">other:</string>
+    <string name="mb">M</string>
+
+    <string name="frame">帧率:</string>
+
+
+</resources>

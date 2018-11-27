@@ -1,0 +1,39 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+
+    if (!ArgusAPM_Release) {
+        publishNonDefault true
+    }
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        consumerProguardFiles 'argus-apm-cloud-dummy-impl.pro'
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    useLibrary 'org.apache.http.legacy'
+}
+
+afterEvaluate {
+    generateReleaseBuildConfig.enabled = false
+    generateDebugBuildConfig.enabled = false
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    if (ArgusAPM_Release) {
+        compile project(':argus-apm-cloud')
+    } else {
+        releaseCompile project(path: ':argus-apm-cloud', configuration: 'release')
+        debugCompile project(path: ':argus-apm-cloud', configuration: 'debug')
+    }
+}

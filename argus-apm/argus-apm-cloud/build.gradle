@@ -1,0 +1,31 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+
+    if (!ArgusAPM_Release) {
+        publishNonDefault true
+    }
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        consumerProguardFiles 'argus-apm-cloud-rules.pro'
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+afterEvaluate {
+    generateReleaseBuildConfig.enabled = false
+    generateDebugBuildConfig.enabled = false
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+}

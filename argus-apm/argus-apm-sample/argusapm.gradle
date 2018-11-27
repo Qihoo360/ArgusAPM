@@ -1,0 +1,7 @@
+apply plugin: 'argusapm'//aspectj的gradle插件名称，启用该插件
+argusApmAjxConfig {
+    excludeJar 'okhttp', 'okio'
+//    debugDependencies 'com.qihoo360.argusapm:argus-apm-main:1.3.43', 'com.qihoo360.argusapm:argus-apm-okhttp:2.0.0.1001', 'com.qihoo360.argusapm:argus-apm-aop:2.0.0.1001'
+    //本地模块依赖，方便Debug调试
+//    moduleDependencies ':argus-apm-main'
+}

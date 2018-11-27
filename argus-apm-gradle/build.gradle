@@ -1,0 +1,111 @@
+buildscript {
+    ext.kotlin_version = '1.2.30'
+    repositories {
+        ***REMOVED***
+        jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.3'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+
+apply plugin: 'kotlin'
+apply plugin: 'maven'
+apply plugin: 'com.jfrog.bintray'
+
+project.ext {
+    aspectjVersion = '1.8.12'
+}
+
+jar {
+    from {
+        zipTree(new File(project.projectDir.absolutePath + "/libs/aspectjtools.jar"))
+    }
+}
+
+dependencies {
+    repositories {
+        ***REMOVED***
+        jcenter()
+        mavenCentral()
+        maven { url 'https://maven.google.com' }
+        maven { url 'http://repository.jetbrains.com/utils' }
+        maven { url "https://dl.bintray.com/archinamon/maven" }
+    }
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    compileOnly gradleApi()
+    compileOnly 'com.android.tools.build:gradle:3.1.3'
+//    compile "org.aspectj:aspectjrt:$aspectjVersion"
+//    compile "org.aspectj:aspectjtools:$aspectjVersion"
+    compile files('libs/aspectjtools.jar')
+}
+
+group = 'com.qihoo360.argusapm'
+version = '2.0.1.1005'
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+/*uploadArchives {
+    configuration = configurations.archives
+    repositories {
+        mavenDeployer {
+            repository(url: uri('file:/C:/Users/liuqingjie/.m2/repository'))
+            pom.project {
+                version '2.0.1.1031'
+                artifactId 'argus-apm-gradle'
+                groupId GROUP_ID
+                packaging TYPE
+                description DESCRIPTION
+            }
+        }
+    }
+}*/
+
+apply from: "bintray.gradle"
+
+/*
+uploadArchives {
+    configuration = configurations.archives
+    repositories {
+        mavenDeployer {
+            */
+/*snapshotRepository(url: MAVEN_REPO_SNAPSHOT_URL) {
+                authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
+            }*//*
+
+
+
+            repository(url: MAVEN_REPO_RELEASE_URL) {
+                authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
+            }
+            pom.project {
+                version '2.0.1.1004'
+                artifactId 'android'
+                groupId GROUP_ID
+                packaging TYPE
+                description DESCRIPTION
+            }
+        }
+    }
+}
+*/
+
+
+
+repositories {
+    maven {
+        url 'https://maven.google.com/'
+        name 'Google'
+    }
+}

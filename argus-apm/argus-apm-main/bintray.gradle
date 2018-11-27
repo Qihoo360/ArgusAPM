@@ -1,0 +1,106 @@
+apply from: "sdk_utils.gradle"
+
+String apmRootDir = projectDir.toString() + "/apm_sdk_output-" + getDirSuffix() + "/"
+
+task deleteOldDependentLibs << {
+    delete(projectDir.toString() + '/libs/argus-apm-cloud.jar')
+    delete(projectDir.toString() + '/libs/argus-apm-cloud-impl.jar')
+}
+
+/**
+ * 拷贝argus-apm-cloud、argus-apm-cloud-impl的jar包到argus-apm-main下面的libs文件夹下
+ * （因为采用工程依赖，生成的AAR是不包含所依赖的工程的class文件的）
+ */
+task copyNewDependentLibs << {
+    copy {
+        from('../argus-apm-cloud/build/outputs/jar/argus-apm-cloud.jar')
+        into(projectDir.toString() + '/libs')
+    }
+
+    copy {
+        from('../argus-apm-cloud-dummy-impl/build/outputs/jar/argus-apm-cloud-dummy-impl.jar')
+        into(projectDir.toString() + '/libs')
+    }
+}
+
+task buildArgusApmCloudJar(type: Jar) {
+    destinationDir = file("../argus-apm-cloud/build/outputs/jar/")
+    baseName = "argus-apm-cloud"
+    from(project.zipTree('../argus-apm-cloud/build/intermediates/bundles/release/classes.jar'))
+
+    exclude "org/**/*.class"
+    exclude('**/BuildConfig.class')
+    exclude('**/BuildConfig\$*.class')
+    exclude('**/R.class')
+    exclude('**/R\$*.class')
+    include('**/*.class')
+}
+
+task buildArgusApmCloudImplJar(type: Jar) {
+    destinationDir = file("../argus-apm-cloud-dummy-impl/build/outputs/jar/")
+    baseName = "argus-apm-cloud-dummy-impl"
+    from(project.zipTree('../argus-apm-cloud-dummy-impl/build/intermediates/bundles/release/classes.jar'))
+    exclude "org/**/*.class"
+    exclude('**/BuildConfig.class')
+    exclude('**/BuildConfig\$*.class')
+    exclude('**/R.class')
+    exclude('**/R\$*.class')
+    include('**/*.class')
+}
+
+task copyArgusApmSdkAndMapping << {
+    copy {
+        from(projectDir.toString() + '/build/outputs/aar/argus-apm-main-release.aar')
+        into(apmRootDir)
+        rename {
+            "argus-apm-" + getDirSuffix() + ".aar"
+        }
+    }
+
+    copy {
+        from projectDir.toString() + "/build/outputs/mapping/release/mapping.txt"
+        into apmRootDir
+    }
+}
+
+
+apply plugin: 'maven'
+
+
+uploadArchives {
+    configuration = configurations.archives
+    repositories {
+        mavenDeployer {
+            repository(url: MAVEN_REPO_RELEASE_URL) {
+                authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
+            }
+            pom.project {
+                version "${APMSDK_VERSION}.${APMSDK_BUILD}"
+                artifactId 'argus-apm-main'
+                groupId GROUP_ID
+                packaging TYPE
+                description DESCRIPTION
+            }
+        }
+    }
+}
+
+
+task publishToJcenter << {
+
+}
+
+publishToJcenter.dependsOn(copyArgusApmSdkAndMapping)
+copyArgusApmSdkAndMapping.dependsOn(build)
+
+copyNewDependentLibs.dependsOn(deleteOldDependentLibs)
+copyNewDependentLibs.dependsOn(buildArgusApmCloudImplJar)
+buildArgusApmCloudImplJar.mustRunAfter(deleteOldDependentLibs)
+buildArgusApmCloudImplJar.dependsOn(buildArgusApmCloudJar)
+buildArgusApmCloudImplJar.dependsOn(":argus-apm-cloud-dummy-impl:build")
+buildArgusApmCloudJar.dependsOn(":argus-apm-cloud:build")
+
+uploadArchives.dependsOn(publishToJcenter)
+
+publishToJcenter.group = APM_TASKS_GROUP
+copyNewDependentLibs.group = APM_TASKS_GROUP

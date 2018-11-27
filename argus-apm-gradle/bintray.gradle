@@ -1,0 +1,81 @@
+// 应用插件
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish'
+
+
+def baseUrl = 'https://github.com/Qihoo360/ArgusApm'
+def siteUrl = baseUrl
+def gitUrl = "${baseUrl}/ArgusApm"
+def issueUrl = "${gitUrl}/issues"
+
+
+
+install {
+    repositories {
+        mavenInstaller {
+            // This generates POM.xml with proper paramters
+            pom.project {
+
+                //添加项目描述
+                name 'Gradle Plugin for Android'
+                url siteUrl
+                //设置开源证书信息
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                //添加开发者信息
+                developers {
+                    developer {
+                        name 'argusapm'
+                        email 'argusapm@gmail.com'
+                    }
+                }
+
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+
+    }
+}
+
+// 强制 Java/JavaDoc 等的编码为 UTF-8
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+//配置上传Bintray相关信息
+bintray {
+    user = BINTRAY_USER
+    key = BINTRAY_APIKEY
+
+    configurations = ['archives']
+    pkg {
+        repo = 'argusapm' // 上传到中央仓库的名称
+        name = 'argus-apm-gradle' // 上传到jcenter 的项目名称
+        userOrg = 'argusapm'
+        desc = 'ArgusApm - A flexible, stable, easy-to-use Android Performence Library' // 项目描述
+        websiteUrl = siteUrl
+        issueTrackerUrl = issueUrl
+        vcsUrl = gitUrl
+        labels = ['gradle', 'plugin', 'argus', 'apm']
+        licenses = ['Apache-2.0']
+        publish = true
+    }
+}
