@@ -1,12 +1,12 @@
+<p align="center">
+  <img alt="RePlugin Logo" src="https://github.com/Qihoo360/ArgusAPM/blob/master/doc/img/readme/ArgusAPM.jpeg" width="400"/>
+</p>
+
+[![license](http://img.shields.io/badge/license-Apache2.0-brightgreen.svg?style=flat)](https://github.com/Qihoo360/RePlugin/blob/master/LICENSE)
+[![Release Version](https://img.shields.io/badge/release-2.0.1.1006-brightgreen.svg)]()
+
 **360开源又一力作——ArgusAPM：可视化移动性能监控平台**
 
-
-
-![ArgusAPM](E:\开源\ArgusAPM.jpeg)
-
-
-
-**license**：Apache2.0  **release**：2.0.1.1006
 
 **项目背景**
 
@@ -52,7 +52,7 @@ ArgusAPM是360手机卫士基于Java和Kotlin开发的一套移动性能监控�
 
 
 
-![](E:\开源\ArgusAPM架构图.png)
+![](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/ArgusAPM架构图.png)
 
 整体架构分为两部分：一是左边蓝色的部分：性能采集模块，一是右边的绿色部分：Gradle Plugin模块。
 
@@ -78,7 +78,7 @@ argus-apm-okhttp.aar：采集OKHTTP网络性能
 
 2. 通过Gradle插件来管理依赖库，使用户接入ArgusAPM更简单。
 
-   ![](E:\开源\Gradle_APM.png)
+   ![](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/Gradle_APM.png)
 
 最终，我们在接入ArgusAPM的时候，只需要简单的应用插件即可，而不需要再单独的去依赖各个aar文件。
 
@@ -94,7 +94,7 @@ argus-apm-okhttp.aar：采集OKHTTP网络性能
 
 **使用现状**
 
-| ![手机卫士](E:\开源\mobilesafe.png) | ![清理大师](E:\开源\clean.png) | ![影视大全](E:\开源\movie.png) | ![](E:\开源\camera.png) | ![](E:\开源\201736165776251_meitu_1.jpg) |
+| ![手机卫士](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/mobilesafe.png) | ![清理大师](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/clean.png) | ![影视大全](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/movie.png) | ![](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/camera.png) | ![](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/201736165776251_meitu_1.jpg) |
 | :---------------------------------: | :----------------------------: | :----------------------------: | :---------------------: | :--------------------------------------: |
 |              手机卫士               |            清理大师            |            影视大全            |        花椒相机         |                 游戏大厅                 |
 
@@ -106,8 +106,8 @@ argus-apm-okhttp.aar：采集OKHTTP网络性能
 
 **官方QQ群**
 
-![](E:\开源\qrcode_1542008553175.jpg)
+![](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/qrcode_1542008553175.jpg)
 
-### **License**
+## License
 
-ArgusAPM is Apache v2.0 licensed.
+RePlugin is [Apache v2.0 licensed](./LICENSE).
