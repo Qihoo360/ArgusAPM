@@ -1,8 +1,8 @@
 <p align="center">
-  <img alt="RePlugin Logo" src="https://github.com/Qihoo360/ArgusAPM/blob/master/doc/img/readme/ArgusAPM.jpeg" width="400"/>
+  <img alt="ArgusAPM Logo" src="https://github.com/Qihoo360/ArgusAPM/blob/master/doc/img/readme/ArgusAPM.jpeg" width="400"/>
 </p>
 
-[![license](http://img.shields.io/badge/license-Apache2.0-brightgreen.svg?style=flat)](https://github.com/Qihoo360/RePlugin/blob/master/LICENSE)
+[![license](http://img.shields.io/badge/license-Apache2.0-brightgreen.svg?style=flat)](https://github.com/Qihoo360/ArgusAPM/blob/master/LICENSE)
 [![Release Version](https://img.shields.io/badge/release-2.0.1.1006-brightgreen.svg)]()
 
 **360开源又一力作——ArgusAPM：可视化移动性能监控平台**
