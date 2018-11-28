@@ -84,11 +84,11 @@ argus-apm-okhttp.aar：采集OKHTTP网络性能
 
 **如何使用**
 
-如果您想快速的接入ArgusAPM，请参考《三分钟快速集成ArgusAPM》，依照文章指引，快速接入；
+如果您想快速的接入ArgusAPM，请参考[《三分钟快速接入ArgusAPM》](https://github.com/Qihoo360/ArgusAPM/wiki/%E4%B8%89%E5%88%86%E9%92%9F%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5)，依照文章指引，快速接入；
 
-如果您想了解更多的ArgusAPM的使用技巧，请参考《详细接入教程》；
+如果您想了解更多的ArgusAPM的使用技巧，请参考[《详细接入教程》](https://github.com/Qihoo360/ArgusAPM/wiki/%E7%A7%BB%E5%8A%A8%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7-SDK-%E8%AF%A6%E7%BB%86%E9%9B%86%E6%88%90%E6%96%87%E6%A1%A3)；
 
-如果您想参查看官方的Sample，进而了解具体的用法，请点击这里查看《Sample源码》;
+如果您想参查看官方的Sample，进而了解具体的用法，请点击这里查看[《Sample》](https://github.com/Qihoo360/ArgusAPM/tree/master/argus-apm/argus-apm-sample);
 
 如果您在接入ArgusAPM的过程中遇到问题，请点击这里阅读《FAQ》，也可加入我们官方的QQ群，进行咨询。
 
