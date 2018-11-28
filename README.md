@@ -48,7 +48,7 @@ ArgusAPM是360手机卫士基于Java和Kotlin开发的一套移动性能监控�
 
 ​	监控进程耗费内存，避免内存耗费过大，应用崩溃
 
-**ArgusAPM架构图**
+**ArgusAPM结构图**
 
 
 
