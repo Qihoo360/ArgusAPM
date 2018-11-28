@@ -1,9 +1,3 @@
-﻿buildscript {
-    dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.3'
-    }
-}
-
 apply plugin: 'com.android.library'
 apply from: "sdk_utils.gradle"
 
@@ -70,7 +64,6 @@ dependencies {
         releaseCompile project(path: ':argus-apm-cloud-dummy-impl', configuration: 'release')
         debugCompile project(path: ':argus-apm-cloud-dummy-impl', configuration: 'debug')
     }
-
 }
 
 apply from: "bintray.gradle"
