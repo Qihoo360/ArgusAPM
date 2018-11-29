@@ -102,7 +102,6 @@ argus-apm-okhttp.aar：采集OKHTTP网络性能
 
 - 支持更多的性能指标
 - 提升用户体验
-- 支持Kotlin语言的Android项目接入
 
 **官方QQ群**
 
