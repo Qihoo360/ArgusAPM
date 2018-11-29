@@ -106,7 +106,6 @@ argus-apm-okhttp.aar：采集OKHTTP网络性能
 
 **官方QQ群**
 
-![](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/qrcode_1542008553175.jpg)
 <p align="left">
   <img alt="ArgusAPM Logo" src="https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/qrcode_1542008553175.jpg" width="300"/>
 </p>
