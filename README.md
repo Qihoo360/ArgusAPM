@@ -90,7 +90,7 @@ argus-apm-okhttp.aar：采集OKHTTP网络性能
 
 如果您想参查看官方的Sample，进而了解具体的用法，请点击这里查看[《Sample》](https://github.com/Qihoo360/ArgusAPM/tree/master/argus-apm/argus-apm-sample);
 
-如果您在接入ArgusAPM的过程中遇到问题，请点击这里阅读《FAQ》，也可加入我们官方的QQ群，进行咨询。
+如果您在接入ArgusAPM的过程中遇到问题，请点击这里阅读[《FAQ》](https://github.com/Qihoo360/ArgusAPM/wiki/FAQ)，也可加入我们官方的QQ群，进行咨询。
 
 **使用现状**
 
