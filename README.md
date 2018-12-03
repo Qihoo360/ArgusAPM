@@ -94,9 +94,9 @@ argus-apm-okhttp.aar：采集OKHTTP网络性能
 
 **使用现状**
 
-| ![手机卫士](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/mobilesafe.png) | ![清理大师](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/clean.png) | ![影视大全](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/movie.png) | ![](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/camera.png) | ![](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/201736165776251_meitu_1.jpg) |
-| :---------------------------------: | :----------------------------: | :----------------------------: | :---------------------: | :--------------------------------------: |
-|              手机卫士               |            清理大师            |            影视大全            |        花椒相机         |                 游戏大厅                 |
+| ![手机卫士](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/mobilesafe.png) | ![清理大师](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/clean.png) | ![手机助手](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/appstore.png) | ![影视大全](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/movie.png) | ![花椒相机](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/camera.png) | ![360手游大厅](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/201736165776251_meitu_1.jpg) |
+| :---------------------------------: | :---------------------------------: | :----------------------------: | :----------------------------: | :---------------------: | :--------------------------------------: |
+|              手机卫士               |            清理大师            |            手机助手            |            影视大全            |        花椒相机         |                 游戏大厅                 |
 
 **未来规划**
 
