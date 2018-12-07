@@ -5,12 +5,13 @@
 [![license](http://img.shields.io/badge/license-Apache2.0-brightgreen.svg?style=flat)](https://github.com/Qihoo360/ArgusAPM/blob/master/LICENSE)
 [![Release Version](https://img.shields.io/badge/release-2.0.1.1006-brightgreen.svg)]()
 
-**360开源又一力作——ArgusAPM：可视化移动性能监控平台**
+**360开源又一力作——ArgusAPM移动性能监控平台**
 
 
 **项目背景**
 
-ArgusAPM是360手机卫士基于Java和Kotlin开发的一套移动性能监控平台，致力于监控和管理应用软件性能和可用性，通过监测和诊断复杂应用程序的性能问题，来保证软件应用程序的良好运行(预期的服务)。
+ArgusAPM是360手机卫士客户端团队继RePlugin之后开源的又一个重量级开源项目。ArgusAPM是360移动端产品使用的可视化性能监控平台，为移动端APP提供性能监控与管理，可以迅速发现和定位各类APP性能和使用问题，帮助APP不断的提升用户体验。
+
 
 **产品价值**
 
@@ -18,37 +19,49 @@ ArgusAPM是360手机卫士基于Java和Kotlin开发的一套移动性能监控�
 - 降低性能定位成本
 - 有效提升用户体验
 
-**性能指标**
+**监控模块**
 
-移动性能监控 作为一款性能监控工具，目前支持如下性能指标：
+ArgusAPM目前支持如下性能指标：
 
-- 交互分析：记录生命周期耗时，优化性能问题
-- 网络请求分析：监控流量使用情况，节省成本
+- 交互分析：分析Activity生命周期耗时，帮助提升页面打开速度，优化用户UI体验
+- 网络请求分析：监控流量使用情况，发现并定位各种网络问题
 - 内存分析：全面监控内存使用情况，降低内存占用
-- 进程监控：监控应用进程启动情况，避免频繁启动
-- 文件监控：监控文件大小/变化，避免文件过大
-- 卡顿分析：监控并发现卡顿原因，提升用户体验
-- ANR分析：发现ANR问题，减少ANR对用户的影响
+- 进程监控：针对多进程应用，统计进程启动情况，发现启动异常（耗电、存活率等）
+- 文件监控：监控APP私有文件大小/变化，避免私有文件过大导致的卡顿、存储空间占用等问题
+- 卡顿分析：监控并发现卡顿原因，代码堆栈精准定位问题，解决明显的卡顿体验
+- ANR分析：捕获ANR异常，解决APP的“未响应”问题
 
-**服务优势**
+**ArgusAPM特性**
 
-- **提高页面打开速度**
+- **非侵入式**
 
-​	监控应用页面，优化页面打开速度，提升用户满意度，适应快节奏生活
+​	无需修改原有工程结构，无侵入接入，接入成本低。
 
-- **流量合理分配**
+- **无性能损耗**
 
-​	监控页面流量使用，合理分配流量，满足业务需求的同时，降低流量成本
+​	ArgusAPM针对各个性能采集模块，优化了采集时机，在不影响原有性能的基础上进行性能的采集和分析。
 
-- **提高app稳定性**
+- **监控全面**
 
-​	监控页面崩溃、卡顿、无响应，保证应用稳定，提升用户体验
+​	目前支持UI性能、网络性能、内存、进程、文件、卡顿、ANR等各个维度的性能数据分析，后续还会继续增加新的性能维度。
 
-- **降低内存耗费**
+- **Debug模式**
 
-​	监控进程耗费内存，避免内存耗费过大，应用崩溃
+​	独有的Debug模式，支持开发和测试阶段、实时采集性能数据，实时本地分析的能力，帮助开发和测试人员在上线前解决性能问题。
 
-**ArgusAPM结构图**
+- **支持插件化方案**
+
+​	在初始化阶段进行设置，可支持插件接入，目前360手机卫士采用的就是在RePlugin插件中接入ArgusAPM，并且性能方面无影响。
+
+- **支持多进程采集**
+
+​	针对多进程的情况，我们做了相应的数据采集及优化方案，使ArgusAPM即适合单进程APP也适合多进程APP。
+
+- **节省用户流量**
+
+​	ArgusAPM使用wifi状态下上传性能数据，这样避免了频繁网络请求带来的耗电问题及用户流量的消耗。
+
+**ArgusAPM项目结构图**
 
 
 
@@ -94,9 +107,9 @@ argus-apm-okhttp.aar：采集OKHTTP网络性能
 
 **使用现状**
 
-| ![手机卫士](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/mobilesafe.png) | ![清理大师](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/clean.png) | ![影视大全](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/movie.png) | ![](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/camera.png) | ![](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/201736165776251_meitu_1.jpg) |
-| :---------------------------------: | :----------------------------: | :----------------------------: | :---------------------: | :--------------------------------------: |
-|              手机卫士               |            清理大师            |            影视大全            |        花椒相机         |                 游戏大厅                 |
+| ![手机卫士](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/mobilesafe.png) | ![清理大师](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/clean.png) | ![手机助手](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/appstore.png) | ![影视大全](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/movie.png) | ![花椒相机](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/camera.png) | ![360手游大厅](https://raw.githubusercontent.com/Qihoo360/ArgusAPM/master/doc/img/readme/201736165776251_meitu_1.jpg) |
+| :---------------------------------: | :---------------------------------: | :----------------------------: | :----------------------------: | :---------------------: | :--------------------------------------: |
+|              手机卫士               |            清理大师            |            手机助手            |            影视大全            |        花椒相机         |                 游戏大厅                 |
 
 **未来规划**
 
