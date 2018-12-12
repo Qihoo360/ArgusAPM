@@ -85,7 +85,7 @@ public class TraceActivity {
         return result;
     }
 
-    private void invoke(Activity activity, long startTime, String methodName, String sign) {
+    public void invoke(Activity activity, long startTime, String methodName, String sign) {
         AH.invoke(activity, startTime, methodName, sign);
     }
 }
