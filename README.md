@@ -3,7 +3,7 @@
 </p>
 
 [![license](http://img.shields.io/badge/license-Apache2.0-brightgreen.svg?style=flat)](https://github.com/Qihoo360/ArgusAPM/blob/master/LICENSE)
-[![Release Version](https://img.shields.io/badge/release-2.0.1.1006-brightgreen.svg)]()
+[![Release Version](https://img.shields.io/badge/release-2.0.1.1007-brightgreen.svg)](https://bintray.com/argusapm/argusapm/argus-apm-gradle)
 
 **360开源又一力作——ArgusAPM移动性能监控平台**
 
