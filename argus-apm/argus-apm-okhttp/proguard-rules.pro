@@ -24,4 +24,5 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keep class com.apm.mobile.okhttp3.NetWorkInterceptor { *;}
+-keep class com.argusapm.android.okhttp3.NetWorkInterceptor { *;}
+-keep class com.argusapm.android.okhttp3.OkHttpUtils { *;}

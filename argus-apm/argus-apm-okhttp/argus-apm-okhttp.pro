@@ -23,7 +23,8 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
--keep class com.apm.mobile.okhttp3.NetWorkInterceptor { *;}
+-keep class com.argusapm.android.okhttp3.NetWorkInterceptor { *;}
+-keep class com.argusapm.android.okhttp3.OkHttpUtils { *;}
 #keep OkHttpClient及OkHttpClient的Builder内部类
 -keepattributes Exceptions,InnerClasses,...
 -keep class okhttp3.OkHttpClient{
