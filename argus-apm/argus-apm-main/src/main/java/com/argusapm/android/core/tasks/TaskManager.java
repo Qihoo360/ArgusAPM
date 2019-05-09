@@ -105,13 +105,15 @@ public class TaskManager {
      * 获取任务是否可以工作
      */
     public boolean taskIsCanWork(String taskName) {
-        if (TextUtils.isEmpty(taskName)) {
-            return false;
+        synchronized (this) {
+            if (TextUtils.isEmpty(taskName)) {
+                return false;
+            }
+            if (taskMap.get(taskName) == null) {
+                return false;
+            }
+            return taskMap.get(taskName).isCanWork();
         }
-        if (taskMap.get(taskName) == null) {
-            return false;
-        }
-        return taskMap.get(taskName).isCanWork();
     }
 
     /**
