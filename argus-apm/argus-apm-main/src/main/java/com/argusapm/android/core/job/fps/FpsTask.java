@@ -53,6 +53,7 @@ public class FpsTask extends BaseTask implements Choreographer.FrameCallback {
     private void calculateFPS() {
         if (mLastFrameTimeNanos == 0) {
             mLastFrameTimeNanos = mFrameTimeNanos;
+            mFpsCount = 0;
             return;
         }
         float costTime = (float) (mFrameTimeNanos - mLastFrameTimeNanos) / 1000000.0F;
