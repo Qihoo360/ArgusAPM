@@ -10,6 +10,8 @@ import com.argusapm.android.core.job.fileinfo.FileInfoStorage;
 import com.argusapm.android.core.job.fileinfo.FileTable;
 import com.argusapm.android.core.job.fps.FpsStorage;
 import com.argusapm.android.core.job.fps.FpsTable;
+import com.argusapm.android.core.job.func.FuncStorage;
+import com.argusapm.android.core.job.func.FuncTable;
 import com.argusapm.android.core.job.memory.MemStorage;
 import com.argusapm.android.core.job.memory.MemoryTable;
 import com.argusapm.android.core.job.net.NetStorage;
@@ -44,6 +46,8 @@ public class ApmTask {
     public static final String TASK_PROCESS_INFO = "processinfo";//
     public static final String TASK_BLOCK = "block";
     public static final String TASK_WATCHDOG = "watchdog";
+    public static final String TASK_FUNC = "func";
+
 
     /*******以下常量为进程启动时，各个模块是否生效的开关。多进程应用在初始化时需要进行配置*********/
     //本地数据清理开关
@@ -65,6 +69,7 @@ public class ApmTask {
     public static final int FLAG_COLLECT_ACTIVITY_AOP = 0x00008000;
     public static final int FLAG_COLLECT_ACTIVITY_INSTRUMENTATION = 0x00010000;
     public static final int FLAG_COLLECT_PROCESS_INFO = 0x00020000;
+    public static final int FLAG_COLLECT_FUNC = 0x00080000;
     public static final int FLAG_COLLECT_BLOCK = 0x00100000;
     public static final int FLAG_COLLECT_WATCHDOG = 0x00800000;
     //每个任务模块为key，模块静态开关为value的Map
@@ -81,6 +86,7 @@ public class ApmTask {
             sTaskMap.put(TASK_FILE_INFO, FLAG_COLLECT_FILE_INFO);
             sTaskMap.put(TASK_ANR, FLAG_COLLECT_ANR);
             sTaskMap.put(TASK_PROCESS_INFO, FLAG_COLLECT_PROCESS_INFO);
+            sTaskMap.put(TASK_FUNC, FLAG_COLLECT_FUNC);
             sTaskMap.put(TASK_BLOCK, FLAG_COLLECT_BLOCK);
             sTaskMap.put(TASK_WATCHDOG, FLAG_COLLECT_WATCHDOG);
         }
@@ -98,6 +104,7 @@ public class ApmTask {
             ApmTask.TASK_APP_START,
             ApmTask.TASK_FILE_INFO,
             ApmTask.TASK_PROCESS_INFO,
+            ApmTask.TASK_FUNC,
             ApmTask.TASK_BLOCK,
             ApmTask.TASK_WATCHDOG
     };
@@ -112,6 +119,7 @@ public class ApmTask {
             new AppStartTable(),
             new FileTable(),
             new ProgessInfoTable(),
+            new FuncTable(),
             new BlockTable(),
             new WatchDogInfoTable()
     };
@@ -126,6 +134,7 @@ public class ApmTask {
             new AppStartStorage(),
             new FileInfoStorage(),
             new ProcessInfoStorage(),
+            new FuncStorage(),
             new BlockStorage(),
             new WatchDogInfoStorage());
 }
